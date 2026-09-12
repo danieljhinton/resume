@@ -215,6 +215,10 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Sit above the fixed CRT scanline/vignette overlay (z-index: 50) so
+     real photos render true-color instead of tinted like the terminal UI. */
+  position: relative;
+  z-index: 51;
 }
 
 .media-slot video-frame {
