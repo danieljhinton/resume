@@ -2,6 +2,7 @@ import { useState } from 'react';
 import TerminalFrame from '../components/layout/TerminalFrame.jsx';
 import Lightbox from '../components/ui/Lightbox.jsx';
 import { photos } from '../data/photosData.js';
+import { assetUrl } from '../utils/assetPath.js';
 
 export default function Photos() {
   const [active, setActive] = useState(null);
@@ -17,12 +18,12 @@ export default function Photos() {
               <div
                 key={photo.id}
                 className={'media-slot' + (ready ? ' is-ready' : '')}
-                onClick={ready ? () => setActive(photo) : undefined}
+                onClick={ready ? () => setActive({ ...photo, src: assetUrl(photo.src) }) : undefined}
                 role={ready ? 'button' : undefined}
                 tabIndex={ready ? 0 : undefined}
               >
                 {ready ? (
-                  <img src={photo.src} alt={photo.caption || ''} />
+                  <img src={assetUrl(photo.src)} alt={photo.caption || ''} />
                 ) : (
                   'IMAGE PENDING REFINEMENT'
                 )}
