@@ -6,7 +6,25 @@
  */
 
 export const videos = [
-  { id: 'video-01', youtubeId: 'DfNk-zl6eVM', title: 'to add', description: 'to add', status: 'ready' },
-  { id: 'video-02', youtubeId: 'ktpSEX6FpvE', title: 'to add', description: 'to add', status: 'ready' },
-  { id: 'video-03', youtubeId: 'FWog5VR_Ar0', title: 'to add', description: 'to add', status: 'ready' },
+  {
+    id: 'video-01',
+    youtubeId: 'DfNk-zl6eVM',
+    title: 'New Features in v2.236 | HaloPSA APAC Webinar',
+    description: 'to add',
+    status: 'ready',
+  },
+  {
+    id: 'video-02',
+    youtubeId: 'ktpSEX6FpvE',
+    title: 'Getting more out of HaloPSA with Robbie Emerson | Halo & Renada',
+    description: 'to add',
+    status: 'ready',
+  },
+  {
+    id: 'video-03',
+    youtubeId: 'FWog5VR_Ar0',
+    title: 'New Features in v2.220 | HaloPSA APAC Webinar',
+    description: 'to add',
+    status: 'ready',
+  },
 ];
