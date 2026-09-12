@@ -17,7 +17,6 @@ export const photos = [
   { id: 'photo-10', caption: '', src: '/assets/photos/10.jpg', status: 'ready' },
   { id: 'photo-12', caption: '', src: '/assets/photos/12.jpg', status: 'ready' },
   { id: 'photo-13', caption: '', src: '/assets/photos/13.jpg', status: 'ready' },
-  { id: 'photo-14', caption: '', src: '/assets/photos/14.jpg', status: 'ready' },
   { id: 'photo-15', caption: '', src: '/assets/photos/15.jpg', status: 'ready' },
   { id: 'photo-16', caption: '', src: '/assets/photos/16.jpg', status: 'ready' },
 ];
