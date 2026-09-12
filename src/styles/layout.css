@@ -338,8 +338,13 @@
 }
 
 .lightbox-panel {
-  max-width: min(90vw, 800px);
-  max-height: 85vh;
+  /* An explicit width (not just max-width) is required here: as a flex
+     column with no width, the panel would otherwise shrink-wrap to its
+     content's un-resolved intrinsic size — for a width:100% <iframe>
+     child that's the UA default of 300px, not the video's real size. */
+  width: 100%;
+  max-width: min(94vw, 1200px);
+  max-height: 92vh;
   border: var(--terminal-border);
   background: var(--lumon-bg-panel);
   border-radius: var(--terminal-radius);
@@ -361,7 +366,7 @@
 .lightbox-video {
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: calc(85vh - 90px);
+  max-height: calc(92vh - 90px);
   border: none;
   display: block;
 }
