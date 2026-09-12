@@ -1,7 +1,7 @@
 /**
  * Lumon Industries wordmark: a wireframe-globe oval around "LUMON", with the
- * O rendered as a ring holding a droplet cutout. Pure SVG (currentColor) so
- * it inherits whatever color/opacity its container sets.
+ * O rendered as a rounded square holding a droplet cutout. Pure SVG
+ * (currentColor) so it inherits whatever color/opacity its container sets.
  */
 export default function LumonLogo({ className }) {
   return (
@@ -16,7 +16,7 @@ export default function LumonLogo({ className }) {
       <mask id="lumon-drop-mask">
         <rect x="0" y="0" width="240" height="110" fill="white" />
         <path
-          d="M142,42 C148,50 154,56 154,62 A12,12 0 1 1 130,62 C130,56 136,50 142,42 Z"
+          d="M155,42 C161,50 167,56 167,62 A12,12 0 1 1 143,62 C143,56 149,50 155,42 Z"
           fill="black"
         />
       </mask>
@@ -29,28 +29,36 @@ export default function LumonLogo({ className }) {
       <path d="M120,5 C160,5 160,105 120,105" strokeWidth="2" />
       <path d="M120,5 C200,5 200,105 120,105" strokeWidth="2" />
 
-      {/* Wordmark block sized/centered so its bounding box sits on the
-          ellipse's center (120), matching the reference logo. */}
+      {/* Wordmark: a bold geometric sans (not the terminal's mono font,
+          which reads wrong for a brand mark) with the O swapped for a
+          rounded square + droplet cutout. Block is centered on cx=120. */}
       <text
-        x="59"
-        y="67"
-        fontFamily="var(--font-terminal)"
-        fontWeight="700"
-        fontSize="34"
-        letterSpacing="2"
+        x="24"
+        y="70"
+        fontFamily="Arial, Helvetica, sans-serif"
+        fontWeight="800"
+        fontSize="44"
         stroke="none"
         fill="currentColor"
       >
         LUM
       </text>
-      <circle cx="142" cy="55" r="18" fill="currentColor" stroke="none" mask="url(#lumon-drop-mask)" />
+      <rect
+        x="136"
+        y="36"
+        width="38"
+        height="38"
+        rx="8"
+        fill="currentColor"
+        stroke="none"
+        mask="url(#lumon-drop-mask)"
+      />
       <text
-        x="160"
-        y="67"
-        fontFamily="var(--font-terminal)"
-        fontWeight="700"
-        fontSize="34"
-        letterSpacing="2"
+        x="180"
+        y="70"
+        fontFamily="Arial, Helvetica, sans-serif"
+        fontWeight="800"
+        fontSize="44"
         stroke="none"
         fill="currentColor"
       >
