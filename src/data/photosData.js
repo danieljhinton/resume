@@ -20,5 +20,5 @@ export const photos = [
   { id: 'photo-13', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/13.jpg', status: 'ready' },
   { id: 'photo-15', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/15.jpg', status: 'ready' },
   { id: 'photo-16', caption: 'Gainsight Pulse Conference, Las Vegas, 2026', src: '/assets/photos/16.jpg', status: 'ready' },
-  { id: 'photo-17', caption: 'Halo Head Office, Stowmarket, 2026', src: '/assets/photos/17.jpg', status: 'ready' },
+  { id: 'photo-17', caption: 'Halo U.S. West Coast Office, Bellingham, 2026', src: '/assets/photos/17.jpg', status: 'ready' },
 ];
