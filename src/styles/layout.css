@@ -194,7 +194,7 @@
   background: rgba(16, 26, 48, 0.4);
 }
 
-/* ---------------- Photos / Videos grids ---------------- */
+/* ---------------- Photos grid ---------------- */
 
 .media-grid {
   display: grid;
@@ -237,9 +237,91 @@
   z-index: 51;
 }
 
-.media-slot video-frame {
+/* ---------------- Videos list ---------------- */
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-row {
+  display: flex;
+  gap: 16px;
+  border: 1px dashed var(--lumon-cyan-faint);
+  border-radius: var(--terminal-radius);
+  padding: 14px;
+  background: rgba(10, 15, 30, 0.4);
+}
+
+.video-row.is-ready {
+  cursor: pointer;
+  border-style: solid;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.video-row.is-ready:hover,
+.video-row.is-ready:focus-visible {
+  border-color: var(--lumon-cyan-dim);
+  box-shadow: var(--lumon-glow-sm);
+  outline: none;
+}
+
+.video-row__thumb {
+  flex: 0 0 clamp(140px, 28vw, 280px);
+  aspect-ratio: 16 / 9;
+  border-radius: var(--terminal-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--lumon-cyan-dim);
+  padding: 8px;
+  background: rgba(10, 15, 30, 0.6);
+}
+
+.video-row__thumb img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Sit above the fixed CRT scanline/vignette overlay, same as photos. */
+  position: relative;
+  z-index: 51;
+}
+
+.video-row__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.video-row__title {
+  color: var(--lumon-cyan);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.video-row__desc {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .video-row {
+    flex-direction: column;
+  }
+
+  .video-row__thumb {
+    flex-basis: auto;
+    width: 100%;
+  }
 }
 
 /* ---------------- Lightbox ---------------- */
@@ -274,6 +356,14 @@
   object-fit: contain;
   display: block;
   margin: 0 auto;
+}
+
+.lightbox-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: calc(85vh - 90px);
+  border: none;
+  display: block;
 }
 
 .lightbox-panel p {

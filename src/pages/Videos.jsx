@@ -1,31 +1,63 @@
+import { useState } from 'react';
 import TerminalFrame from '../components/layout/TerminalFrame.jsx';
+import Lightbox from '../components/ui/Lightbox.jsx';
 import { videos } from '../data/videosData.js';
 
+const readyVideos = videos.filter((video) => video.status === 'ready' && video.youtubeId);
+
 export default function Videos() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const active = activeIndex === null ? null : readyVideos[activeIndex];
+
   return (
     <TerminalFrame title="LUMON // MDR / VIDEOS.DAT">
       <div className="stack">
-        <p className="muted-text">Motion records archive.</p>
-        <div className="media-grid">
+        <div className="video-list">
           {videos.map((video) => {
-            const ready = video.status === 'ready' && video.embedUrl;
+            const ready = video.status === 'ready' && video.youtubeId;
             return (
-              <div key={video.id} className={'media-slot' + (ready ? ' is-ready' : '')}>
-                {ready ? (
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title || video.id}
-                    allowFullScreen
-                    style={{ width: '100%', height: '100%', border: 'none' }}
-                  />
-                ) : (
-                  'VIDEO PENDING REFINEMENT'
-                )}
+              <div
+                key={video.id}
+                className={'video-row' + (ready ? ' is-ready' : '')}
+                onClick={
+                  ready
+                    ? () => setActiveIndex(readyVideos.findIndex((v) => v.id === video.id))
+                    : undefined
+                }
+                role={ready ? 'button' : undefined}
+                tabIndex={ready ? 0 : undefined}
+              >
+                <div className="video-row__thumb">
+                  {ready ? (
+                    <img
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                      alt={video.title || ''}
+                    />
+                  ) : (
+                    'VIDEO PENDING REFINEMENT'
+                  )}
+                </div>
+                <div className="video-row__body">
+                  <div className="video-row__title">{video.title || 'UNTITLED FILE'}</div>
+                  <p className="video-row__desc muted-text">{video.description}</p>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
+      {active && (
+        <Lightbox onClose={() => setActiveIndex(null)} caption={active.title}>
+          <iframe
+            className="lightbox-video"
+            src={`https://www.youtube.com/embed/${active.youtubeId}?autoplay=1`}
+            title={active.title || active.id}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </Lightbox>
+      )}
     </TerminalFrame>
   );
 }

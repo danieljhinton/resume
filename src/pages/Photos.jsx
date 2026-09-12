@@ -9,10 +9,7 @@ const readyPhotos = photos.filter((photo) => photo.status === 'ready' && photo.s
 export default function Photos() {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const active =
-    activeIndex === null
-      ? null
-      : { ...readyPhotos[activeIndex], src: assetUrl(readyPhotos[activeIndex].src) };
+  const active = activeIndex === null ? null : readyPhotos[activeIndex];
 
   const step = (delta) =>
     setActiveIndex((i) => (i + delta + readyPhotos.length) % readyPhotos.length);
@@ -45,12 +42,16 @@ export default function Photos() {
           })}
         </div>
       </div>
-      <Lightbox
-        item={active}
-        onClose={() => setActiveIndex(null)}
-        onPrev={() => step(-1)}
-        onNext={() => step(1)}
-      />
+      {active && (
+        <Lightbox
+          onClose={() => setActiveIndex(null)}
+          onPrev={() => step(-1)}
+          onNext={() => step(1)}
+          caption={active.caption}
+        >
+          <img src={assetUrl(active.src)} alt={active.caption || ''} />
+        </Lightbox>
+      )}
     </TerminalFrame>
   );
 }
