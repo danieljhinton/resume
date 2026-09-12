@@ -32,7 +32,7 @@
 
 .nav-terminal__logo {
   flex-shrink: 0;
-  height: clamp(28px, 5vw, 40px);
+  height: clamp(36px, 7vw, 56px);
   width: auto;
   color: var(--lumon-cyan-dim);
 }
@@ -318,6 +318,6 @@
   }
 
   .nav-terminal__logo {
-    height: 24px;
+    height: 32px;
   }
 }

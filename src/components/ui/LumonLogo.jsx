@@ -16,7 +16,7 @@ export default function LumonLogo({ className }) {
       <mask id="lumon-drop-mask">
         <rect x="0" y="0" width="240" height="110" fill="white" />
         <path
-          d="M118,42 C124,50 130,56 130,62 A12,12 0 1 1 106,62 C106,56 112,50 118,42 Z"
+          d="M142,42 C148,50 154,56 154,62 A12,12 0 1 1 130,62 C130,56 136,50 142,42 Z"
           fill="black"
         />
       </mask>
@@ -29,8 +29,10 @@ export default function LumonLogo({ className }) {
       <path d="M120,5 C160,5 160,105 120,105" strokeWidth="2" />
       <path d="M120,5 C200,5 200,105 120,105" strokeWidth="2" />
 
+      {/* Wordmark block sized/centered so its bounding box sits on the
+          ellipse's center (120), matching the reference logo. */}
       <text
-        x="35"
+        x="59"
         y="67"
         fontFamily="var(--font-terminal)"
         fontWeight="700"
@@ -41,9 +43,9 @@ export default function LumonLogo({ className }) {
       >
         LUM
       </text>
-      <circle cx="118" cy="55" r="18" fill="currentColor" stroke="none" mask="url(#lumon-drop-mask)" />
+      <circle cx="142" cy="55" r="18" fill="currentColor" stroke="none" mask="url(#lumon-drop-mask)" />
       <text
-        x="136"
+        x="160"
         y="67"
         fontFamily="var(--font-terminal)"
         fontWeight="700"
