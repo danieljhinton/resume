@@ -24,7 +24,7 @@
 .nav-terminal__brand {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   margin-bottom: 8px;
   text-transform: uppercase;
 }
@@ -42,7 +42,7 @@
   display: inline-block;
   padding: 6px 10px;
   text-decoration: none;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   font-size: 0.85rem;
   letter-spacing: 0.03em;
   border: 1px solid transparent;
@@ -54,14 +54,14 @@
 .nav-terminal__link:hover,
 .nav-terminal__link:focus-visible {
   color: var(--lumon-white);
-  border-color: var(--lumon-green-dim);
+  border-color: var(--lumon-cyan-dim);
   outline: none;
 }
 
 .nav-terminal__link.is-active {
-  color: var(--lumon-green);
+  color: var(--lumon-cyan);
   text-shadow: var(--lumon-glow-sm);
-  border-color: var(--lumon-green);
+  border-color: var(--lumon-cyan);
 }
 
 /* ---------------- Terminal frame (page chrome) ---------------- */
@@ -71,7 +71,7 @@
   border: var(--terminal-border);
   background: rgba(10, 18, 16, 0.55);
   border-radius: var(--terminal-radius);
-  box-shadow: 0 0 0 1px rgba(62, 240, 140, 0.05), 0 0 24px rgba(62, 240, 140, 0.06);
+  box-shadow: 0 0 0 1px rgba(110, 231, 255, 0.05), 0 0 24px rgba(110, 231, 255, 0.06);
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -83,11 +83,11 @@
   justify-content: space-between;
   gap: 12px;
   padding: 8px 16px;
-  border-bottom: 1px solid var(--lumon-green-faint);
+  border-bottom: 1px solid var(--lumon-cyan-faint);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
 }
 
 .terminal-frame__header-dots span {
@@ -96,7 +96,7 @@
   height: 7px;
   margin-left: 5px;
   border-radius: 50%;
-  background: var(--lumon-green-faint);
+  background: var(--lumon-cyan-faint);
 }
 
 .terminal-frame__body {
@@ -111,17 +111,17 @@
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--lumon-green-faint);
+  color: var(--lumon-cyan-faint);
   padding: 4px 0 0;
 }
 
 /* ---------------- Placeholder notice ---------------- */
 
 .placeholder-notice {
-  border: 1px dashed var(--lumon-green-faint);
+  border: 1px dashed var(--lumon-cyan-faint);
   border-radius: var(--terminal-radius);
   padding: 18px;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -131,7 +131,7 @@
 /* ---------------- Progress bar ---------------- */
 
 .progress-bar {
-  border: 1px solid var(--lumon-green-dim);
+  border: 1px solid var(--lumon-cyan-dim);
   border-radius: var(--terminal-radius);
   height: 18px;
   overflow: hidden;
@@ -142,10 +142,10 @@
   height: 100%;
   background: repeating-linear-gradient(
     45deg,
-    var(--lumon-green-dim),
-    var(--lumon-green-dim) 6px,
-    var(--lumon-green) 6px,
-    var(--lumon-green) 12px
+    var(--lumon-cyan-dim),
+    var(--lumon-cyan-dim) 6px,
+    var(--lumon-cyan) 6px,
+    var(--lumon-cyan) 12px
   );
   transition: width 220ms ease-out;
 }
@@ -154,7 +154,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   margin-top: 6px;
-  color: var(--lumon-green);
+  color: var(--lumon-cyan);
 }
 
 /* ---------------- Grid helpers used by content pages ---------------- */
@@ -172,7 +172,7 @@
 }
 
 .card {
-  border: 1px solid var(--lumon-green-faint);
+  border: 1px solid var(--lumon-cyan-faint);
   border-radius: var(--terminal-radius);
   padding: 14px 16px;
   background: rgba(14, 26, 22, 0.4);
@@ -188,7 +188,7 @@
 
 .media-slot {
   aspect-ratio: 4 / 3;
-  border: 1px dashed var(--lumon-green-faint);
+  border: 1px dashed var(--lumon-cyan-faint);
   border-radius: var(--terminal-radius);
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   cursor: default;
   padding: 10px;
   background: rgba(10, 18, 16, 0.4);
@@ -253,8 +253,8 @@
 .lightbox-close {
   margin-top: 12px;
   background: none;
-  border: 1px solid var(--lumon-green-dim);
-  color: var(--lumon-green);
+  border: 1px solid var(--lumon-cyan-dim);
+  color: var(--lumon-cyan);
   font-family: var(--font-terminal);
   padding: 6px 14px;
   cursor: pointer;
@@ -262,7 +262,7 @@
 }
 
 .lightbox-close:hover {
-  background: var(--lumon-green-faint);
+  background: var(--lumon-cyan-faint);
 }
 
 /* ---------------- Responsive ---------------- */

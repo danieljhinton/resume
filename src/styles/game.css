@@ -20,7 +20,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
 }
 
 .rm-grid-wrap {
@@ -46,7 +46,7 @@
   justify-content: center;
   height: 34px;
   font-size: 1rem;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   cursor: pointer;
   border-radius: var(--terminal-radius);
   transition: transform 150ms ease-out, color 120ms ease, text-shadow 120ms ease, opacity 200ms ease;
@@ -69,7 +69,7 @@
 
 .rm-cell.is-selected {
   color: var(--lumon-bg);
-  background: var(--lumon-green);
+  background: var(--lumon-cyan);
   text-shadow: none;
   box-shadow: var(--lumon-glow-md);
 }
@@ -97,7 +97,7 @@
 .rm-bin {
   flex: 1;
   min-width: 90px;
-  border: 1px solid var(--lumon-green-dim);
+  border: 1px solid var(--lumon-cyan-dim);
   border-radius: var(--terminal-radius);
   padding: 10px 8px;
   text-align: center;
@@ -110,7 +110,7 @@
 
 .rm-bin:hover,
 .rm-bin:focus-visible {
-  border-color: var(--lumon-green);
+  border-color: var(--lumon-cyan);
   box-shadow: var(--lumon-glow-sm);
   outline: none;
 }
@@ -120,19 +120,19 @@
 }
 
 .rm-bin.is-armed {
-  border-color: var(--lumon-green);
+  border-color: var(--lumon-cyan);
   box-shadow: var(--lumon-glow-md);
 }
 
 .rm-bin__label {
   font-size: 1.1rem;
   letter-spacing: 0.08em;
-  color: var(--lumon-green);
+  color: var(--lumon-cyan);
 }
 
 .rm-bin__count {
   font-size: 0.7rem;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   margin-top: 4px;
 }
 
@@ -168,7 +168,7 @@
 }
 
 .rm-win-panel h2 {
-  color: var(--lumon-green);
+  color: var(--lumon-cyan);
   text-shadow: var(--lumon-glow-md);
   letter-spacing: 0.08em;
   margin: 0 0 12px;
@@ -183,8 +183,8 @@
 .rm-win-reset {
   margin-top: 18px;
   background: none;
-  border: 1px solid var(--lumon-green);
-  color: var(--lumon-green);
+  border: 1px solid var(--lumon-cyan);
+  color: var(--lumon-cyan);
   font-family: var(--font-terminal);
   padding: 8px 18px;
   cursor: pointer;
@@ -194,7 +194,7 @@
 }
 
 .rm-win-reset:hover {
-  background: var(--lumon-green-faint);
+  background: var(--lumon-cyan-faint);
 }
 
 .rm-confetti {
@@ -208,7 +208,7 @@
   position: absolute;
   top: -20px;
   font-size: 0.85rem;
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
   animation: rm-fall linear infinite;
 }
 

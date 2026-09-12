@@ -3,24 +3,24 @@
    ============================================================ */
 
 :root {
-  --lumon-bg: #05070a;
-  --lumon-bg-panel: #0a1210;
-  --lumon-bg-panel-raised: #0e1a16;
+  --lumon-bg: #060810;
+  --lumon-bg-panel: #0a0f1e;
+  --lumon-bg-panel-raised: #101a30;
 
-  --lumon-green: #3ef08c;
-  --lumon-green-dim: #1c6b45;
-  --lumon-green-faint: #0f3d29;
-  --lumon-white: #d9f5e5;
+  --lumon-cyan: #6ee7ff;
+  --lumon-cyan-dim: #1c6d80;
+  --lumon-cyan-faint: #0f3d4a;
+  --lumon-white: #eafdff;
   --lumon-amber: #f0c73e;
   --lumon-red: #f0503e;
 
   --lumon-glow-sm: 0 0 4px currentColor;
-  --lumon-glow-md: 0 0 4px currentColor, 0 0 12px rgba(62, 240, 140, 0.35);
-  --lumon-glow-lg: 0 0 6px currentColor, 0 0 22px rgba(62, 240, 140, 0.45);
+  --lumon-glow-md: 0 0 4px currentColor, 0 0 12px rgba(110, 231, 255, 0.35);
+  --lumon-glow-lg: 0 0 6px currentColor, 0 0 22px rgba(110, 231, 255, 0.45);
 
   --font-terminal: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
-  --terminal-border: 1px solid var(--lumon-green-dim);
+  --terminal-border: 1px solid var(--lumon-cyan-dim);
   --terminal-radius: 2px;
 
   color-scheme: dark;
@@ -49,7 +49,7 @@ a {
 }
 
 ::selection {
-  background: var(--lumon-green-dim);
+  background: var(--lumon-cyan-dim);
   color: var(--lumon-bg);
 }
 
@@ -62,8 +62,8 @@ a {
   background: var(--lumon-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--lumon-green-faint);
-  border: 1px solid var(--lumon-green-dim);
+  background: var(--lumon-cyan-faint);
+  border: 1px solid var(--lumon-cyan-dim);
 }
 
 /* ------------------------------------------------------------
@@ -73,7 +73,7 @@ a {
 .crt-screen {
   position: relative;
   min-height: 100vh;
-  background: radial-gradient(ellipse at center, #081410 0%, var(--lumon-bg) 70%);
+  background: radial-gradient(ellipse at center, #0b1428 0%, var(--lumon-bg) 70%);
   isolation: isolate;
 }
 
@@ -125,16 +125,16 @@ a {
    ------------------------------------------------------------ */
 
 .glow-text {
-  color: var(--lumon-green);
+  color: var(--lumon-cyan);
   text-shadow: var(--lumon-glow-md);
 }
 
 .dim-text {
-  color: var(--lumon-green-dim);
+  color: var(--lumon-cyan-dim);
 }
 
 .muted-text {
-  color: rgba(217, 245, 229, 0.55);
+  color: rgba(234, 253, 255, 0.55);
 }
 
 .mono-label {
