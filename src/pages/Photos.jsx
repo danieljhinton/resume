@@ -4,8 +4,18 @@ import Lightbox from '../components/ui/Lightbox.jsx';
 import { photos } from '../data/photosData.js';
 import { assetUrl } from '../utils/assetPath.js';
 
+const readyPhotos = photos.filter((photo) => photo.status === 'ready' && photo.src);
+
 export default function Photos() {
-  const [active, setActive] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const active =
+    activeIndex === null
+      ? null
+      : { ...readyPhotos[activeIndex], src: assetUrl(readyPhotos[activeIndex].src) };
+
+  const step = (delta) =>
+    setActiveIndex((i) => (i + delta + readyPhotos.length) % readyPhotos.length);
 
   return (
     <TerminalFrame title="LUMON // MDR / PHOTOS.DAT">
@@ -17,7 +27,11 @@ export default function Photos() {
               <div
                 key={photo.id}
                 className={'media-slot' + (ready ? ' is-ready' : '')}
-                onClick={ready ? () => setActive({ ...photo, src: assetUrl(photo.src) }) : undefined}
+                onClick={
+                  ready
+                    ? () => setActiveIndex(readyPhotos.findIndex((p) => p.id === photo.id))
+                    : undefined
+                }
                 role={ready ? 'button' : undefined}
                 tabIndex={ready ? 0 : undefined}
               >
@@ -31,7 +45,12 @@ export default function Photos() {
           })}
         </div>
       </div>
-      <Lightbox item={active} onClose={() => setActive(null)} />
+      <Lightbox
+        item={active}
+        onClose={() => setActiveIndex(null)}
+        onPrev={() => step(-1)}
+        onNext={() => step(1)}
+      />
     </TerminalFrame>
   );
 }
