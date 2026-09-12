@@ -15,8 +15,10 @@ export const photos = [
   { id: 'photo-08', caption: 'MSP Masterclass, Melbourne, 2026', src: '/assets/photos/8.jpg', status: 'ready' },
   { id: 'photo-09', caption: 'MSP Masterclass, Melbourne, 2026', src: '/assets/photos/9.jpg', status: 'ready' },
   { id: 'photo-10', caption: 'MSP Masterclass, Auckland, 2026', src: '/assets/photos/10.jpg', status: 'ready' },
+  { id: 'photo-11', caption: 'Kaseya Connect, Sydney, 2026', src: '/assets/photos/11.jpg', status: 'ready' },
   { id: 'photo-12', caption: 'MSP Masterclass, Auckland, 2026', src: '/assets/photos/12.jpg', status: 'ready' },
   { id: 'photo-13', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/13.jpg', status: 'ready' },
   { id: 'photo-15', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/15.jpg', status: 'ready' },
   { id: 'photo-16', caption: 'Gainsight Pulse Conference, Las Vegas, 2026', src: '/assets/photos/16.jpg', status: 'ready' },
+  { id: 'photo-17', caption: 'Halo Head Office, Stowmarket, 2026', src: '/assets/photos/17.jpg', status: 'ready' },
 ];
