@@ -1,0 +1,144 @@
+/* ============================================================
+   LUMON TERMINAL — design tokens & CRT effect system
+   ============================================================ */
+
+:root {
+  --lumon-bg: #05070a;
+  --lumon-bg-panel: #0a1210;
+  --lumon-bg-panel-raised: #0e1a16;
+
+  --lumon-green: #3ef08c;
+  --lumon-green-dim: #1c6b45;
+  --lumon-green-faint: #0f3d29;
+  --lumon-white: #d9f5e5;
+  --lumon-amber: #f0c73e;
+  --lumon-red: #f0503e;
+
+  --lumon-glow-sm: 0 0 4px currentColor;
+  --lumon-glow-md: 0 0 4px currentColor, 0 0 12px rgba(62, 240, 140, 0.35);
+  --lumon-glow-lg: 0 0 6px currentColor, 0 0 22px rgba(62, 240, 140, 0.45);
+
+  --font-terminal: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --terminal-border: 1px solid var(--lumon-green-dim);
+  --terminal-radius: 2px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--lumon-bg);
+  color: var(--lumon-white);
+  font-family: var(--font-terminal);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--lumon-green-dim);
+  color: var(--lumon-bg);
+}
+
+/* Thin scrollbars in the terminal palette (webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--lumon-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lumon-green-faint);
+  border: 1px solid var(--lumon-green-dim);
+}
+
+/* ------------------------------------------------------------
+   CRT wrapper: scanlines, vignette, flicker
+   ------------------------------------------------------------ */
+
+.crt-screen {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #081410 0%, var(--lumon-bg) 70%);
+  isolation: isolate;
+}
+
+.crt-scanlines,
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.crt-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.18) 0px,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
+
+.crt-vignette {
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.crt-flicker {
+  animation: crt-flicker 6.5s infinite;
+}
+
+@keyframes crt-flicker {
+  0%, 92%, 100% { opacity: 0.55; }
+  93% { opacity: 0.4; }
+  94% { opacity: 0.6; }
+  95% { opacity: 0.38; }
+  96% { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-flicker {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
+/* ------------------------------------------------------------
+   Utility text styles
+   ------------------------------------------------------------ */
+
+.glow-text {
+  color: var(--lumon-green);
+  text-shadow: var(--lumon-glow-md);
+}
+
+.dim-text {
+  color: var(--lumon-green-dim);
+}
+
+.muted-text {
+  color: rgba(217, 245, 229, 0.55);
+}
+
+.mono-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
