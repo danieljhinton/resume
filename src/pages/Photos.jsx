@@ -10,7 +10,6 @@ export default function Photos() {
   return (
     <TerminalFrame title="LUMON // MDR / PHOTOS.DAT">
       <div className="stack">
-        <p className="muted-text">Visual records archive.</p>
         <div className="media-grid">
           {photos.map((photo) => {
             const ready = photo.status === 'ready' && photo.src;
