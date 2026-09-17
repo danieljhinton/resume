@@ -18,7 +18,10 @@ export const photos = [
   { id: 'photo-11', caption: 'Kaseya Connect APAC Conference, Sydney, 2026', src: '/assets/photos/11.jpg', status: 'ready' },
   { id: 'photo-12', caption: 'MSP Masterclass, Auckland, 2026', src: '/assets/photos/12.jpg', status: 'ready' },
   { id: 'photo-13', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/13.jpg', status: 'ready' },
+  { id: 'photo-14', caption: 'Gartner Symposium, Gold Coast, 2026', src: '/assets/photos/14.jpg', status: 'ready' },
   { id: 'photo-15', caption: 'MSP Masterclass, Sydney, 2026', src: '/assets/photos/15.jpg', status: 'ready' },
   { id: 'photo-16', caption: 'Gainsight Pulse Conference, Las Vegas, 2026', src: '/assets/photos/16.jpg', status: 'ready' },
   { id: 'photo-17', caption: 'Halo U.S. West Coast Office, Bellingham, 2026', src: '/assets/photos/17.jpg', status: 'ready' },
+  { id: 'photo-18', caption: 'Gartner Symposium, Gold Coast, 2026', src: '/assets/photos/18.jpg', status: 'ready' },
+  { id: 'photo-19', caption: 'Professional Headshot, 2026', src: '/assets/photos/19.jpg', status: 'ready' },
 ];
