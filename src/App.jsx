@@ -28,6 +28,8 @@ export default function App() {
             <Route path="/refine-macrodata" element={<RefineMacrodata />} />
           </Routes>
           <Footer />
+          <div className="crt-scanlines crt-flicker" aria-hidden="true" />
+          <div className="crt-vignette" aria-hidden="true" />
         </div>
       </CRTScreen>
     </HashRouter>
